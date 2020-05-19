@@ -9,7 +9,7 @@
   
   <header>
   	<a href="index.html">
-  	  <img src="https://via.placeholder.com/138x70?text=logo" alt="Логотип City of Sedona">
+  	  <img src="img/logo.svg" width="138" height="70" alt="Логотип City of Sedona">
     </a>
   	<nav>
   	  <ul>
@@ -23,11 +23,50 @@
   
   <main>
   	<h1>Гостиницы в Седоне</h1>
+
+    <section>
+      <h2>Фильтры</h2>
+      <form action="#" method="get">
+        <fieldset>
+            <legend>Инфраструктура:</legend>
+            <label>
+              <input type="checkbox" name="area" checked>Бассейн
+            </label>
+            <label>
+              <input type="checkbox" name="area">Парковка
+            </label>
+            <label>
+              <input type="checkbox" name="area">Wi-Fi
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Тип жилья:</legend>
+            <label>
+              <input type="checkbox" name="area" checked>Гостиница
+            </label>
+            <label>
+              <input type="checkbox" name="area" checked>Мотель
+            </label>
+            <label>
+              <input type="checkbox" name="area" checked>Апартаменты
+            </label>
+
+        </fieldset>
+        <fieldset>
+            <legend>Цена в сутки (Р):</legend>
+            <label><span>от</span><input type="text" placeholder="от 0" value="0"></label>
+            <label><span>до</span><input type="text" placeholder="до 3000" value="3000"></label>
+          </fieldset>
+          <!-- 🚨 тут будет ползунок !-->
+      </form>
+    </section>
+
+
   	<ul>
       <li>
         <div>
           <div>
-            <img src="https://via.placeholder.com/135x90.png" alt="Foto Amara Resort & Spa">
+            <img src="img/amara.jpg" width="135" height="90" alt="Amara Resort &amp; Spa copy">
           </div>
           <div>
             <h3>
@@ -47,7 +86,7 @@
       <li>
         <div>
           <div>
-            <img src="https://via.placeholder.com/135x90.png" alt="Foto Desert Quail Inn">
+            <img src="img/desert.jpg" width="135" height="90" alt="Desert Quail Inn">
           </div>
           <div>
             <h3>
@@ -67,7 +106,7 @@
       <li>
         <div>
           <div>
-            <img src="https://via.placeholder.com/135x90.png" alt="Foto Villas at Poco Diablo">
+            <img src="img/diablo.jpg" width="135" height="90" alt="Villas at Poco Diablo">
           </div>
           <div>
             <h3>
@@ -89,7 +128,7 @@
   </main>
   <footer>
     <p>#visitSEDONA</p>
-    <p>ТЕЛ: +7(495) 666-01-66</p>
+    <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
     <section>
       <h2>Социальные сети</h2>
       <ul>

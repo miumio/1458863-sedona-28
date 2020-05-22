@@ -24,7 +24,7 @@
   <main>
 
     <section>
-      <h1>Главная страница проекта "Седона"</h1>
+      <h1 class="visually-hidden">Главная страница проекта "Седона"</h1>
       <!-- 🎨 тут будет фоновая картинка гор c маской в стилях !-->
       <img src="img/welcome.svg" width="457" height="351" alt="Welcome of Sedona">
     </section>
@@ -77,17 +77,33 @@
       <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
       <!-- Далее будет форма🔮!-->
       <h2>Поиск гостиницы в Седоне</h2>
-      <p>
-        Дата заезда: 24 апреля 2017
-        Дата выезда: 4 июля 2017
-        Взрослые: 2
-        Дети: 0
-      </p>
-      <button>Найти</button>
+
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="data-coming">Дата заезда:</label>
+          <input type="text" id="data-coming" name="coming" placeholder="24 апреля 2017">
+        </p>
+        <p>
+          <label for="data-out">Дата выезда:</label>
+          <input type="text" id="data-out" name="leaving" placeholder="24 июля 2017">
+        </p>
+        <p>
+          <label for="form-adults">Взрослые:</label>
+          <input type="number" id="form-adults" name="adults" value="2">
+        </p>
+        <p>
+          <label for="form-kids">Дети:</label>
+          <input type="number" id="form-kids" name="kids" value="0">
+        </p>
+
+        <button type="submit">Найти</button>
+
+      </form>
+
     </section>
 
     <section>
-      <h2>Как нас найти</h2>
+      <h2 class="visually-hidden">Как нас найти</h2>
       <img src="img/map.jpg" width="1200" height="594" alt="Карта">
     </section>
 
@@ -97,7 +113,7 @@
     <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
     
     <section>
-      <h2>Социальные сети</h2>
+      <h2 class="visually-hidden">Социальные сети</h2>
       <ul>
         <li><a href="#">twitter</a></li>
         <li><a href="#">facebook</a></li>

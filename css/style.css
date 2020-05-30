@@ -32,18 +32,17 @@ body {
   min-width: 1200px;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
   color: var(--basic-dark-grey);
   text-transform: uppercase;
-  background-color: var(--basic-grey);
+  background-color: var(--light-grey);
 }
 
 a {
   text-decoration: none;
-  color: var(--basic-black);
 }
 
 img {
@@ -61,7 +60,7 @@ img {
 
 .container {
   margin: 0 auto;
-  max-width: 90%;
+  width: 1200px;
   min-height: 100vh;
   background-color: var(--basic-white);
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
@@ -78,16 +77,20 @@ img {
   list-style: none;
 }
 
-.site-navigation a {
+.site-navigation-item {
   color: var(--basic-black);
 }
 
-.site-navigation a:hover {
+.site-navigation-item:hover {
   color: var(--basic-blue);
 }
 
-.site-navigation a:active {
+.site-navigation-item:active {
   color: var(--special-black);
+}
+
+.active {
+  color: var(--basic-brown);
 }
 /* Advantages */
 
@@ -103,12 +106,30 @@ img {
   line-height: 26px;
 }
 
+.advantages h3 {
+  font-size: 21px;
+  line-height: 21px;
+  color: var(--basic-black);
+}
+
+.advantages-block {
+  list-style: none;
+}
+
+
 /* Main */
 
-.main {
-  background-image: url(../img/background.jpg);
+.intro {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  min-height: 509px;
+
+  background:
+  url("../img/intro-mask.svg") no-repeat 0 454px,
+  url("../img/background.jpg") no-repeat center;
   background-color: var(--basic-blue);
-  text-align: center;
 }
 
 /* Booking */
@@ -137,8 +158,13 @@ img {
 .field-button,
 .booking-item input {
   font: inherit;
+  text-transform: uppercase;
   background-color: var(--light-grey);
   border: 0;
+}
+
+.booking-item input::placeholder {
+  color: var(--basic-black);
 }
 
 .field-button:hover,
@@ -174,11 +200,6 @@ img {
   color: var(--basic-blue);
 }
 
-.button-blue {
-  color: var(--basic-white);
-  background-color: var(--basic-blue);
-}
-
 .button-brown {
   color: var(--basic-white);
   background-color: var(--basic-brown);
@@ -193,6 +214,11 @@ img {
   background-color: var(--brown-active);
 }
 
+.button-blue {
+  color: var(--basic-white);
+  background-color: var(--basic-blue);
+}
+
 .button-blue:hover {
   color: var(--basic-white);
   background-color: var(--blue-hover);
@@ -203,43 +229,52 @@ img {
   background-color: var(--blue-active);
 }
 
-.social {
-  list-style: none;
-
-}
 .social-button {
+  position: relative;
   display: block;
   width: 46px;
   height: 48px;
-}
-
-.social-twitter {
-  background: url(../img/twitter.svg) no-repeat center;
   background-color: var(--basic-blue);
 }
 
-.social-fb {
-  background: url(../img/fb-icon.svg) no-repeat center;
-  background-color: var(--basic-blue);
+.social-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.social-youtube {
-  background: url(../img/youtube.svg) no-repeat center;
-  background-color: var(--basic-blue);
+.social-button-tw::after {
+  background-image: url("../img/twitter.svg");
+  background-size: 17px auto;
 }
 
+.social-button-fb::after {
+  background-image: url("../img/fb-icon.svg");
+  background-size: 12px auto;
+}
 
-.social-twitter:hover,
-.social-fb:hover,
-.social-youtube:hover {
+.social-button-yt::after {
+  background-image: url("../img/youtube.svg");
+  background-size: 20px auto;
+}
+
+.social-button:hover {
   background-color: var(--blue-hover);
 }
 
-.social-twitter:active,
-.socail-fb:active,
-.social-youtube:active {
-  fill-opacity: .3;
+.social-button:active {
+  background-color: var(--blue-active);
 }
+
+.social-button:active::after {
+  opacity: 0.3;
+}
+
 
 /* Hotels */
 
@@ -254,6 +289,7 @@ img {
 
 .hotels-title {
   font-size: 21px;
+  color: var(--basic-black);
 }
 
 .hotels-title:hover {
@@ -273,12 +309,23 @@ img {
   font-size: 21px;
   font-weight: 700;
   line-height: 26px;
- 
- }
+}
 
+.footer a {
+  color: var(--basic-black);
+}
 
-.social {
+.social-block {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+.social-item {
+  margin: 0 3px 6px;
 }
 
 .copyright svg:hover {

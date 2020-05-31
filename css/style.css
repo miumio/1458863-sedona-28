@@ -12,6 +12,7 @@
   --grey-button: #A9A9A9;
   --light-grey: #F2F2F2;
   --special-grey: #EBEBEB;
+  --gray-raiting: #666666;
 
   --basic-brown: #766357;
   --brown-hover: #604E43;
@@ -24,6 +25,7 @@
 
   --basic-white: #ffffff;
   --special-white: rgba(255,255,255, 0.3);
+  --footer-white:rgba(255, 255, 255, 0.9);
 }
 
 /* Global */
@@ -58,38 +60,86 @@ img {
   margin: -1px;
 }
 
-.container {
+/* Grid */
+
+.page-body {
+  display: grid;
+  grid-template-rows: 
+  min-content 1fr min-content;
+  align-content: start;
   margin: 0 auto;
   width: 1200px;
   min-height: 100vh;
+ 
   background-color: var(--basic-white);
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
 }
 
+
+
 /* Navigation */
+.main-header {
+  position: relative;
+  width: 1200px;
+  min-height: 56px;
+}
+
+.main-logo {
+  position: absolute;
+  width: 138px;
+  height: auto;
+  left: calc(50% - 69px);
+  top: 0;
+  
+}
 
 .navigation {
+  display: flex;
+  margin: 0px;
+  padding: 0 73px;
+
+  align-items: center;
   font-weight: 700;
   color: var(--basic-black);
 }
 
+
 .site-navigation {
+  display: flex;
+  width: 1200px;
+  padding: 0px;
+  justify-content: space-between;
   list-style: none;
 }
 
 .site-navigation-item {
-  color: var(--basic-black);
+  width: 20%;
+  text-align: left;
 }
 
-.site-navigation-item:hover {
+.site-navigation-item:nth-child(2) {
+  margin-right: auto;
+}
+
+.site-navigation-item:nth-child(3),
+.site-navigation-item:nth-child(4) {
+  text-align: right;
+}
+
+.site-navigation-item a{
+  color: var(--basic-black);
+
+}
+
+.site-navigation-item a:hover {
   color: var(--basic-blue);
 }
 
-.site-navigation-item:active {
+.site-navigation-item a:active {
   color: var(--special-black);
 }
 
-.active {
+.site-navigation-item-active {
   color: var(--basic-brown);
 }
 /* Advantages */
@@ -97,6 +147,12 @@ img {
 .advantages {
   background-color: var(--basic-white);
   text-align: center;
+}
+
+.advantages-intro {
+  width: 520px;
+  margin: 0 auto;
+  padding: 43px 20px 60px;
 }
 
 .advantages h2 {
@@ -122,7 +178,6 @@ img {
 .intro {
   display: flex;
   justify-content: center;
-  margin: 0;
   padding: 0;
   min-height: 509px;
 
@@ -135,6 +190,8 @@ img {
 /* Booking */
 
 .booking {
+  width: 568px;
+  margin: 58px auto;
   text-align: center;
 }
 
@@ -149,7 +206,18 @@ img {
 }
 
 /* Form */
+.form-wrapper {
+  padding: 55px;
+  margin: 0;
+  box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+}
+
 .booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex: 1 0 458px;
   text-align: left;
   font-weight: 700;
   color: var(--basic-black);
@@ -278,34 +346,105 @@ img {
 
 /* Hotels */
 
+
+
 .hotels {
   font-weight: 700;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .hotels p {
   font-weight: 400;
+  margin: 0;
 }
 
 .hotels-title {
-  font-size: 21px;
-  color: var(--basic-black);
+  min-width: 700px;
+  margin: 0;
 }
 
-.hotels-title:hover {
+.hotels-title a {
+  font-size: 21px;
+  color: var(--basic-black);
+
+}
+
+.hotels-title a:hover {
   color: var(--basic-blue);
 }
 
-.hotels-title:active {
+.hotels-title a:active {
   color: var(--special-black);
+}
+
+.hotels-item {
+  display: flex;
+  width: 1200px;
+  box-sizing: border-box;
+  padding: 30px 73px;
+  border-bottom: 1px solid var(--special-blue);
+}
+
+.hotels-image {
+  width: 135px;
+  height: 90px;
+  margin-right: 29px;
+  background-color: var(--basic-grey);
+}
+
+.hotels-about {
+  display: flex;
+  flex-grow: 1;
+  width: 300px;
+  flex-wrap: wrap;
+}
+
+.hotel-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 110px;
+  margin-right: 5px; 
+}
+
+.hotel-book {
+  width: 142px;
+}
+
+.hotels-raiting {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.hotels-star {
+  color: var(--basic-blue);
+}
+
+.hotels-raiting p {
+  color: var(--gray-raiting);
+  background-color: var(--light-grey);
+  padding: 6px 13px 7px 16px;
+}
+
+.hotels-raiting p::before {
+  content: "Рейтинг: ";
 }
 
 /* Footer */
 .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 120px;
   color: var(--basic-black);
+  background-color: var(--footer-white);
 }
 
 .footer p {
+  margin: 0;
   font-size: 21px;
   font-weight: 700;
   line-height: 26px;
@@ -326,6 +465,11 @@ img {
 
 .social-item {
   margin: 0 3px 6px;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
 }
 
 .copyright svg:hover {

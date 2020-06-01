@@ -88,13 +88,15 @@ img {
   position: absolute;
   width: 138px;
   height: auto;
-  left: calc(50% - 69px);
+  left: 50%; 
+  transform: translateX(-50%);
   top: 0;
   
 }
 
 .navigation {
   display: flex;
+  height: 56px;
   margin: 0px;
   padding: 0 73px;
 
@@ -108,7 +110,7 @@ img {
   display: flex;
   width: 1200px;
   padding: 0px;
-  justify-content: space-between;
+  margin: 0px;
   list-style: none;
 }
 
@@ -195,10 +197,6 @@ img {
   text-align: center;
 }
 
-.booking p {
-  line-height: 24px;
-}
-
 .booking-header {
   color: var(--basic-black);
   font-size: 30px;
@@ -212,12 +210,14 @@ img {
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
 }
 
-.booking-form {
+.form-wrapper p {
+  line-height: 24px;
+  margin: 0 0 30px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+}
 
-  flex: 1 0 458px;
+.booking-form {
   text-align: left;
   font-weight: 700;
   color: var(--basic-black);
@@ -226,6 +226,7 @@ img {
 .field-button,
 .booking-item input {
   font: inherit;
+  height: 38px;
   text-transform: uppercase;
   background-color: var(--light-grey);
   border: 0;
@@ -233,6 +234,7 @@ img {
 
 .booking-item input::placeholder {
   color: var(--basic-black);
+  padding-left: 5px;
 }
 
 .field-button:hover,
@@ -244,8 +246,7 @@ img {
 .booking-item input:focus {
   background-color: var(--basic-white);
   border: 2px solid var(--special-blue);
-  box-sizing: border-box;
-}
+ }
 
 /* Buttons */
 
@@ -271,6 +272,13 @@ img {
 .button-brown {
   color: var(--basic-white);
   background-color: var(--basic-brown);
+}
+
+.booking .button-brown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86px;
 }
 
 .button-brown:hover {
@@ -343,10 +351,13 @@ img {
   opacity: 0.3;
 }
 
+.booking-form .button-blue {
+  width: 100%;
+  font-size: 21px;
+  height: 58px;
+}
 
 /* Hotels */
-
-
 
 .hotels {
   font-weight: 700;
@@ -419,6 +430,7 @@ img {
   justify-content: space-between;
   align-items: flex-end;
 }
+
 .hotels-star {
   color: var(--basic-blue);
 }
@@ -435,12 +447,20 @@ img {
 
 /* Footer */
 .footer {
-  display: flex;
-  justify-content: space-around;
+  display:flex;
   align-items: center;
   min-height: 120px;
   color: var(--basic-black);
   background-color: var(--footer-white);
+}
+
+.footer-item {
+  width: 33%;
+  justify-content: center;
+}
+
+.footer-item p {
+  padding-left: 130px;
 }
 
 .footer p {

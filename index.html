@@ -42,7 +42,7 @@
         <li class="advantage advantage-illustrated">
           <div class="advantage-text-block">
             <p class="advantage-headline">Настоящий<br>городок</p>
-            <p class="advantage-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+            <p class="advantage-description">Седона — не аттракцион для туристов, там <br>течёт своя жизнь</p>
           </div>
           <div class="advantage-image-block">
             <img src="img/sedona.jpg" width="800" height="256" alt="Фото городка Седона">
@@ -50,11 +50,11 @@
           <ul class="advantage-features">
             <li class="advantage-feature advantage-feature-accomodation">
               <p class="advantage-headline">Жильё</p>
-              <p class="advantage-description">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+              <p class="advantage-description">Рекомендуем пожить в настоящем <br>мотеле, всё как в кино!</p>
             </li>
             <li class="advantage-feature advantage-feature-meal">
               <p class="advantage-headline">Еда</p>
-              <p class="advantage-description">Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+              <p class="advantage-description">Всегда заказывайте фирменный бургер,<br> вы не разочаруетесь!</p>
             </li>
             <li class="advantage-feature advantage-feature-souvenirs">
               <p class="advantage-headline">Сувениры</p>
@@ -65,7 +65,7 @@
         <li class="advantage advantage-illustrated">
           <div class="advantage-text-block">
             <p class="advantage-headline">Там есть<br> Мост дьявола</p>
-            <p class="advantage-description">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            <p class="advantage-description">Да, по нему можно пройти! Если конечно<br> вы осмелитесь</p>
           </div>
           <div class="advantage-image-block">
             <img src="img/bridge.jpg" width="800" height="256" alt="Фото моста Дьявола">
@@ -73,14 +73,14 @@
         </li>
         <li class="advantage advantage-preview">
           <p class="advantage-headline">Небольшая<br> площадь</p>
-          <p class="advantage-description">Все достопримечательности находятся очень близко</p>
+          <p class="advantage-description">Все достопримечательности<br> находятся очень близко</p>
         </li>
         <li class="advantage advantage-preview">
           <p class="advantage-headline">Красивая<br> дорога</p>
-          <p class="advantage-description">Ехать в седону из лас-вегаса совсем не скучно!</p>
+          <p class="advantage-description">Ехать в седону из лас-вегаса совсем<br> не скучно!</p>
         <li class="advantage advantage-preview">
           <p class="advantage-headline">Мало<br> туристов</p>
-          <p class="advantage-description">Большинство едет в гранд каньон и толпится там</p>
+          <p class="advantage-description">Большинство едет в гранд каньон<br> и толпится там</p>
         </li>
       </ol>
     </section>
@@ -91,55 +91,62 @@
       <div class="button-brown">
         <h2>Поиск гостиницы в Седоне</h2>
       </div>
-      <form  class="booking-form" action="https://echo.htmlacademy.ru" method="post">
-        <p class="booking-item">
-          <label for="data-coming">Дата заезда:</label>
-          <input type="text" id="data-coming" name="coming" placeholder="24 апреля 2017">
-          <button class="button field-button" type="button">
+
+      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+        <div class="search-form-item">
+          <label class="search-form-label" for="data-coming">Дата заезда:</label>
+          <input class="search-form-field" type="text" id="data-coming" name="coming" placeholder="24 апреля 2017">
+          <button class="search-form-btn btn-calendar" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22"><path d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/><path d="M4.594 8.225h2.625v2.066H4.594zM4.594 11.668h2.625v2.067H4.594zM4.594 15.112h2.625v2.066H4.594zM9.188 15.112h2.625v2.066H9.188zM9.188 11.668h2.625v2.067H9.188zM9.188 8.225h2.625v2.066H9.188zM13.781 15.112h2.625v2.066h-2.625zM13.781 11.668h2.625v2.067h-2.625zM13.781 8.225h2.625v2.066h-2.625z"/></svg>
           </button>
-        </p>
-        <p class="booking-item">
-          <label for="data-out">Дата выезда:</label>
-          <input type="text" id="data-out" name="leaving" placeholder="24 июля 2017">
-          <button class="button field-button" type="button">
+        </div>
+        <div class="search-form-item">
+          <label class="search-form-label" for="data-out">Дата выезда:</label>
+          <input class="search-form-field" type="text" id="data-out" name="leaving" placeholder="24 июля 2017">
+          <button class="search-form-btn btn-calendar" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22"><path d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/><path d="M4.594 8.225h2.625v2.066H4.594zM4.594 11.668h2.625v2.067H4.594zM4.594 15.112h2.625v2.066H4.594zM9.188 15.112h2.625v2.066H9.188zM9.188 11.668h2.625v2.067H9.188zM9.188 8.225h2.625v2.066H9.188zM13.781 15.112h2.625v2.066h-2.625zM13.781 11.668h2.625v2.067h-2.625zM13.781 8.225h2.625v2.066h-2.625z"/></svg>
           </button>
-        </p>
-        <p class="booking-item booking-item-numbers">
-          <label for="form-adults">Взрослые:</label>
-          <button class="button field-button field-button-sub" type="button">
-            <svg width="12" height="3" viewBox="0 0 12 3">
-            <rect width="12" height="3">
-            </svg>
-          </button>
-          <input type="number" id="form-adults" name="adults" value="2">
-          <button class="button field-button" type="button">
-            <svg width="11" height="11" viewBox="0 0 11 11">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z"/>
-            </svg>
-          </button>
-        </p>
-        <p class="booking-item booking-item-numbers">
-          <label for="form-kids">Дети:</label>
-          <button class="button field-button field-button-sub" type="button">
-            <svg width="12" height="3" viewBox="0 0 12 3">
-            <rect width="12" height="3">
-            </svg>
-          </button>
-          <input type="number" id="form-kids" name="kids" value="0">
-          <button class="button field-button" type="button">
-            <svg width="11" height="11" viewBox="0 0 11 11">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z"/>
-            </svg>
-          </button>
-        </p>
+        </div>
+        <div class="search-form-item">
+          <div class="search-form-inner">
+            <label for="adults" class="search-form-label">Взрослые:</label>
+            <div class="search-form-field-wrapper">
+              <input type="text" class="search-form-field search-form-field-center" value="2" id="adults">
+              <button type="button" class="search-form-btn btn-minus">
+                <svg width="12" height="3" viewBox="0 0 12 3">
+                  <rect width="12" height="3"></rect>
+                </svg>
+              </button>
+              <button type="button" class="search-form-btn btn-plus">
+                <svg width="11" height="11" viewBox="0 0 11 11">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z"/>
+                 </svg>
+              </button>
+            </div>
+          </div>
+          <div class="search-form-inner">
+          <label for="children" class="search-form-label search-form-label-children">Дети:</label>
+            <div class="search-form-field-wrapper">
+              <input type="text" class="search-form-field search-form-field-center" value="0" id="children">
+              <button type="button" class="search-form-btn btn-minus">
+                <svg width="12" height="3" viewBox="0 0 12 3">
+                  <rect width="12" height="3"></rect>
+                </svg>
+              </button>
+              <button type="button" class="search-form-btn btn-plus">
+                <svg width="11" height="11" viewBox="0 0 11 11">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <button type="submit" class="button button-blue">Найти</button>
       </form>
     </section>
-    <section class="map">
+    <section>
       <h2 class="visually-hidden">Карта</h2>
-      <img src="img/map.jpg" width="1200" height="594" alt="Карта">
+      <img src="img/map.jpg" width="1200" height="594" alt="Карта" class="map">
     </section>
 
 

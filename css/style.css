@@ -12,7 +12,10 @@
   --grey-button: #A9A9A9;
   --light-grey: #F2F2F2;
   --special-grey: #EBEBEB;
+  --grey-border: #E5E5E5;
   --gray-raiting: #666666;
+  --gray-toggle:#ABABAB;
+  --gray-toggle-shadow: rgba(171,171,171, 0.3);
 
   --basic-brown: #766357;
   --brown-hover: #604E43;
@@ -21,7 +24,6 @@
   --basic-blue: #81B3D2;
   --blue-hover: #669EC0;
   --blue-active: #5496BD;
-  --special-blue: #E5E5E5;
 
   --basic-white: #ffffff;
   --special-white: rgba(255,255,255, 0.3);
@@ -40,7 +42,7 @@ body {
   font-weight: 400;
   color: var(--basic-dark-grey);
   text-transform: uppercase;
-  background-color: var(--light-grey);
+  background-color: var(--basic-white);
 }
 
 a {
@@ -52,9 +54,7 @@ img {
   height: auto;
 }
 
-.visually-hidden:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -82,8 +82,6 @@ input[type="radio"].visually-hidden {
   background-color: var(--basic-white);
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
 }
-
-
 
 /* Navigation */
 .main-header {
@@ -121,7 +119,7 @@ input[type="radio"].visually-hidden {
 }
 
 .site-navigation-item {
-  width: 240px;
+  width: 227px;
   text-align: left;
   padding: 16px 0px;
 }
@@ -455,6 +453,197 @@ input[type="radio"].visually-hidden {
   right: 0;
 }
 
+/* Filter */
+
+.filter-form {
+  display: grid;
+  grid-template-columns: 255px 483px 1fr;
+  color: var(--basic-white);
+
+
+  background-image: url("../img/background-filter.jpg");
+  background-size: cover;
+  background-color: var(--basic-blue);
+}
+
+.filter-item {
+  padding: 0px 71px;
+}
+
+.filter-range {
+  width: 317px;
+}
+
+.filter-fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.filter-fieldset-legend {
+  padding-top: 25px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.filter-ul {
+  list-style: none;
+  line-height: 45px;
+  padding: 0;
+  margin: 3px 0 20px;
+  padding-left: 40px;
+}
+
+.check-box {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -40px;
+  width: 27px;
+  height: 23px;
+  background: url("../img/checkbox-off.svg") no-repeat 0 50%;
+}
+
+.check-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.check-input:checked + .check-box {
+  background: url("../img/checkbox-on.svg") no-repeat 50% 50%;
+}
+
+.check-input:focus + .check-box {
+  outline: 1px solid var(--special-blue);
+  outline-offset: 5px;
+}
+
+.filter-sort-list {
+  display: flex;
+  flex-grow: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-sort-list-li {
+  padding-left: 30px;
+  font-size: 12px;
+  text-decoration: underline dotted var(--basic-blue);
+  text-underline-position: under;
+  color: var(--special-black);
+}
+
+.filter-sort-list-li-active {
+  color: var(--basic-blue);
+  text-decoration: none;
+}
+
+.filter-result {
+  display: flex;
+  border-bottom: 1px solid var(--grey-border);
+  padding: 31px 72px;
+}
+
+.filter-result p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--basic-black);
+}
+
+.filter-result-btn {
+  outline: 1px solid red;
+  width: 50px;
+}
+
+.filter-result-title {
+  width: 164px;
+}
+
+.filter-result-title p {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.filter-sort {
+  font-size: 12px;
+}
+
+/* Range */
+
+.range-filter {
+  width: 318px;
+}
+
+.range-controls {
+  position: relative;
+  height: 35px;
+  padding-top: 19px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: var(--special-white);
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+  background: var(--basic-white);
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 7px solid var(--basic-white);
+  background-color: var(--gray-toggle);
+  border-radius: 50%;
+  box-shadow: 0 2px 0 var(--gray-toggle-shadow);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 0;
+}
+
+.range-controls .toggle-max {
+  left: 253px;
+}
+
+.price-controls {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border: 2px solid var(--basic-white);
+}
+
+.price-controls-item {
+  width: 50%;
+  text-align: right;
+  padding-right: 45px;
+}
+
+.price-controls-item:first-child {
+    border-right: 2px solid white;
+}
+
+.price-controls input {
+  border: none;
+  width: 30px;
+  height: 20px;
+  background-color: transparent;
+  font: inherit;
+  color: var(--basic-white);
+}
+
 /* Hotels */
 
 .hotels {
@@ -466,15 +655,15 @@ input[type="radio"].visually-hidden {
 
 .hotels p {
   font-weight: 400;
-  margin: 0;
+  margin: 0 0 15px;
 }
 
 .hotels-title {
   min-width: 700px;
-  margin: 0;
+  margin: -5px 0 5px;
 }
 
-.hotels-title a {
+.hotels-title-a {
   font-size: 21px;
   padding: 0;
   margin: 0;
@@ -495,7 +684,8 @@ input[type="radio"].visually-hidden {
   width: 1200px;
   box-sizing: border-box;
   padding: 30px 73px;
-  border-bottom: 1px solid var(--special-blue);
+  border-bottom: 1px solid var(--grey-border);
+  align-items: flex-start;
 }
 
 .hotels-image {
@@ -520,6 +710,9 @@ input[type="radio"].visually-hidden {
   margin-right: 5px; 
 }
 
+.hotel-details a {
+  padding-top: 2px;
+}
 .hotel-book {
   width: 142px;
 }
@@ -538,16 +731,14 @@ input[type="radio"].visually-hidden {
   font-size: 17px;
   letter-spacing: 7px;
   text-align: right;
+  margin: -3px 0 40px;
 }
 
 .hotels-raiting p {
   color: var(--gray-raiting);
   background-color: var(--light-grey);
   padding: 3px 13px 2px 16px;
-}
-
-.hotels-raiting p::before {
-  content: "Рейтинг: ";
+  margin: 0;
 }
 
 /* Footer */
@@ -707,3 +898,24 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
 }
 
+.button-range {
+  color: var(--basic-white);
+  padding: 4px 33px;
+  border: 2px solid var(--basic-white);
+  margin-left: 85px;
+}
+
+.filter-button {
+  display: block;
+  width: 11px;
+  height: 10px;
+  background-color: var(--basic-blue);
+}
+
+.filter-button-up {
+  background: url("../img/icon-up-dir.svg");
+}
+
+.filter-button-up {
+  background-image: url("../img/icon-down-dir.svg");
+}

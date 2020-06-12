@@ -16,6 +16,7 @@
   --gray-raiting: #666666;
   --gray-toggle:#ABABAB;
   --gray-toggle-shadow: rgba(171,171,171, 0.3);
+  --gray-sort: #CACACA;
 
   --basic-brown: #766357;
   --brown-hover: #604E43;
@@ -331,7 +332,7 @@ img {
 /* Form */
 .search-form {
   position: absolute;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-between;
   top: 100%;
@@ -343,6 +344,11 @@ img {
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
   box-sizing: border-box;
   background-color: var(--basic-white);
+}
+
+.search-form-show {
+  display: block;
+  animation: show 0.5s;
 }
 
 .search-form-item {
@@ -530,11 +536,20 @@ img {
 }
 
 .filter-sort-list-li {
-  padding-left: 30px;
+  padding-left: 40px;
   font-size: 12px;
   text-decoration: underline dotted var(--basic-blue);
   text-underline-position: under;
   color: var(--special-black);
+}
+
+.filter-sort-list-li:hover {
+  color: var(--basic-blue);
+}
+
+.filter-sort-list-li:active {
+  color: var(--basic-black);
+  text-decoration: none;
 }
 
 .filter-sort-list-li-active {
@@ -573,6 +588,65 @@ img {
   font-size: 12px;
 }
 
+.sort {
+  display: flex;
+}
+
+.sort-dir {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 -6px 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.sort-dir li {
+  flex: none;
+}
+
+.sort-dir a {
+  position: relative;
+  display: block;
+  width: 23px;
+  height: 24px;
+}
+
+.sort-dir a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.sort-dir .up::before {
+  border-width: 0 5.5px 10px 5.5px;
+  border-color: transparent transparent var(--gray-sort) transparent;
+}
+
+.sort-dir .up:hover::before {
+  border-color: transparent transparent var(--basic-black) transparent;
+}
+
+.sort-dir .up:active::before {
+  border-color: transparent transparent var(--basic-blue) transparent;
+}
+
+.sort-dir .down::before {
+  border-width: 10px 5.5px 0 5.5px;
+  border-color: var(--gray-sort) transparent transparent transparent;
+}
+
+.sort-dir .down:hover::before {
+  border-color: var(--basic-black) transparent transparent transparent;
+}
+
+.sort-dir .down:active::before {
+  border-color: var(--basic-blue) transparent transparent transparent;
+}
 /* Range */
 
 .range-filter {
@@ -713,6 +787,7 @@ img {
 .hotel-details a {
   padding-top: 2px;
 }
+
 .hotel-book {
   width: 142px;
 }
@@ -905,17 +980,13 @@ img {
   margin-left: 85px;
 }
 
-.filter-button {
-  display: block;
-  width: 11px;
-  height: 10px;
-  background-color: var(--basic-blue);
-}
+/* Animation */
+@keyframes show {
+  0% {
+    opacity:0;
+  }
 
-.filter-button-up {
-  background: url("../img/icon-up-dir.svg");
-}
-
-.filter-button-up {
-  background-image: url("../img/icon-down-dir.svg");
+  100% {
+    opacity:1;
+  }
 }

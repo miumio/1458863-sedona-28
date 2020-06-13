@@ -36,19 +36,19 @@
             <ul class="filter-ul">
               <li>
                 <label>
-                <input class="check-input" type="checkbox" checked>
+                <input class="check-input" type="checkbox" name="pool" checked>
                   <span class="check-box"></span>Бассейн
                 </label>
               </li>
               <li>
                 <label>
-                  <input class="check-input" type="checkbox">
+                  <input class="check-input" type="checkbox" name="parking">
                   <span class="check-box"></span>Парковка
                 </label>
               </li>
               <li>
                 <label>
-                  <input class="check-input" type="checkbox">
+                  <input class="check-input" type="checkbox" name="wifi">
                   <span class="check-box"></span>Wi-Fi
                 </label>
               </li>
@@ -61,19 +61,19 @@
             <ul class="filter-ul">
               <li>
                 <label>
-                  <input class="check-input" type="checkbox" checked>
+                  <input class="check-input" type="checkbox" name="hotel" checked>
                   <span class="check-box"></span>Гостиница
                 </label>
               </li>
               <li>
                 <label>
-                  <input class="check-input" type="checkbox" checked>
+                  <input class="check-input" type="checkbox" name="motel" checked>
                   <span class="check-box"></span>Мотель
                 </label>
               </li>
               <li>
                 <label>
-                  <input class="check-input" type="checkbox" checked>
+                  <input class="check-input" type="checkbox" name="apart" checked>
                   <span class="check-box"></span>Апартаменты
                 </label>
               </li>
@@ -86,12 +86,12 @@
             <div class="price-controls">
               <div class="price-controls-item">
                 <label class="min-price">
-                от <input type="text" placeholder="от 0" value="0">
+                от <input type="text" id="minprice" placeholder="от 0" value="0">
                 </label>
               </div>
               <div class="price-controls-item">
                 <label class="max-price">
-                до <input type="text" placeholder="до 3000" value="3000">
+                до <input type="text" id="maxprice" placeholder="до 3000" value="3000">
                 </label>
               </div>
             </div>
@@ -100,8 +100,8 @@
                 <div class="scale">
                 <div class="bar"></div>
               </div>
-              <div class="toggle toggle-min" tabindex="0"></div>
-              <div class="toggle toggle-max" tabindex="0"></div>
+              <button class="toggle" type="button" style="left:7px" aria-label="Выбрать минимальное значение"></button>
+              <button class="toggle" type="button" style="left:260px" aria-label="Выбрать максимальное значение"></button>
             </div>
           </div>
           </fieldset>
@@ -112,22 +112,22 @@
       <div class="filter-result-title">
         <p>Найдено: 3</p>
       </div>
-      <p>Сортировка:</p>
-      <ul class="filter-sort-list">
-        <li><a class="filter-sort-list-li filter-sort-list-li-active" href="#">По цене</a></li>
-        <li><a class="filter-sort-list-li" href="#">По типу</a></li>
-        <li><a class="filter-sort-list-li" href="#">По рейтингу</a></li>
-      </ul>
-      <div class="sort">
-        <ul class="sort-dir">
-          <li>
-            <a href="#" class="up"></a>
-          </li>
-          <li>
-            <a href="#" class="down"></a>
-          </li>
+      <div class="filter-sort">
+        <p>Сортировка:</p>
+        <ul class="filter-sort-list">
+          <li class="filter-sort-list-link filter-sort-list-link-active"><a href="#">По цене</a></li>
+          <li class="filter-sort-list-link"><a href="#">По типу</a></li>
+          <li class="filter-sort-list-link"><a href="#">По рейтингу</a></li>
         </ul>
       </div>
+      <ul class="sort-dir">
+        <li>
+          <a href="#" class="up"></a>
+        </li>
+        <li>
+          <a href="#" class="down"></a>
+        </li>
+      </ul>
     </div>
     </section>
 
@@ -139,7 +139,7 @@
           </div>
           <div class="hotels-about">
             <h3 class="hotels-title">
-              <a class="hotels-title-a" href="#">Amara Resort &amp; Spa</a>
+              <a class="hotels-title-link" href="#">Amara Resort &amp; Spa</a>
             </h3>
             <div class="hotel-details">
               <p>Гостиница</p>
@@ -151,7 +151,9 @@
             </div>
           </div>
           <div class="hotels-raiting">
-            <div class="hotels-star">&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="hotels-star hotels-star-4">
+
+            </div>
             <p>Рейтинг: 8.5</p>
           </div>
         </div>
@@ -164,7 +166,7 @@
           </div>
           <div class="hotels-about">
             <h3 class="hotels-title">
-              <a class="hotels-title-a" href="#">Desert Quail Inn</a>
+              <a class="hotels-title-link" href="#">Desert Quail Inn</a>
             </h3>
             <div class="hotel-details">
               <p>Мотель</p>
@@ -176,7 +178,7 @@
             </div>
           </div>
           <div class="hotels-raiting">
-            <div class="hotels-star">&#9733;&#9733;&#9733;</div>
+            <div class="hotels-star hotels-star-3"></div>
             <p>Рейтинг: 8.9</p>
           </div>
         </div>
@@ -189,7 +191,7 @@
           </div>
           <div class="hotels-about">
             <h3 class="hotels-title">
-              <a class="hotels-title-a" href="#">Villas at Poco Diablo</a>
+              <a class="hotels-title-link" href="#">Villas at Poco Diablo</a>
             </h3>
             <div class="hotel-details">
               <p>Апартаменты</p>
@@ -201,7 +203,7 @@
             </div>
           </div>
           <div class="hotels-raiting">
-            <div class="hotels-star">&#9733;&#9733;</div>
+            <div class="hotels-star hotels-star-2"></div>
             <p>Рейтинг: 8.9</p>
           </div>
         </div>

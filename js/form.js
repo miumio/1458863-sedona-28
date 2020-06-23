@@ -3,9 +3,6 @@ var form = document.querySelector(".search-form");
 var dataOn = form.querySelector("#data-coming");
 var dataOut = form.querySelector("#data-out");
 var adults = form.querySelector("#adults");
-var kids = form.querySelector("#children");
-
-
 
 formLink.addEventListener("click", function () {
   form.classList.toggle("search-form-hide");

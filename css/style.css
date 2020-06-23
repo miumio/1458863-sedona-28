@@ -114,7 +114,6 @@ img {
   color: var(--basic-black);
 }
 
-
 .site-navigation {
   display: flex;
   width: 1200px;
@@ -170,6 +169,10 @@ img {
   background-color: var(--basic-blue);
 }
 
+.map p {
+  margin: 0;
+}
+
 /* Advantages */
 
 .advantages {
@@ -221,7 +224,7 @@ img {
 .advantage-illustrated {
   flex-direction: row;
   flex-wrap: wrap;
-  color: white;
+  color: var(--basic-white);
   background-color: var(--basic-blue);
 }
 
@@ -315,10 +318,6 @@ img {
   padding: 0;
 }
 
-.map {
-  display: block;
-}
-
 /* Booking */
 
 .booking {
@@ -343,6 +342,7 @@ img {
   position: absolute;
   top: 100%;
   left: 50%;
+  z-index: 200;
 
   width: 100%;
   padding: 55px;
@@ -354,12 +354,13 @@ img {
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px var(--search-grey-shadow);
 
-  animation: hide 0.3s;
   box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
 .search-form-hide {
-  display: none;
+  opacity: 0;
 }
 
 .search-form-item {
@@ -419,6 +420,7 @@ img {
   font-weight: 700;
   color: var(--basic-black);
   text-transform: uppercase;
+  opacity: 1;
 }
 
 .search-form-field:hover {
@@ -550,7 +552,7 @@ img {
 }
 
 .check-input:focus + .check-box {
-  outline: 1px solid var(--special-blue);
+  outline: 2px solid var(--special-white);
   outline-offset: 5px;
 }
 
@@ -671,6 +673,10 @@ img {
   border-color: var(--gray-sort) transparent transparent transparent;
 }
 
+.sort-dir .down-active::before {
+  border-color: var(--basic-blue) transparent transparent transparent;
+}
+
 .sort-dir .down:hover::before {
   border-color: var(--basic-black) transparent transparent transparent;
 }
@@ -678,6 +684,7 @@ img {
 .sort-dir .down:active::before {
   border-color: var(--basic-blue) transparent transparent transparent;
 }
+
 /* Range */
 
 .range-filter {
@@ -868,6 +875,7 @@ img {
 }
 
 /* Footer */
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -989,39 +997,14 @@ img {
 }
 
 .social-button {
-  position: relative;
-
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 46px;
   height: 48px;
   background-color: var(--basic-blue);
-}
 
-.social-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.social-button-tw::after {
-  background-image: url("../img/twitter.svg");
-  background-size: 17px auto;
-}
-
-.social-button-fb::after {
-  background-image: url("../img/fb-icon.svg");
-  background-size: 12px auto;
-}
-
-.social-button-yt::after {
-  background-image: url("../img/youtube.svg");
-  background-size: 20px auto;
+  fill: var(--basic-white);
 }
 
 .social-button:hover {
@@ -1030,10 +1013,7 @@ img {
 
 .social-button:active {
   background-color: var(--blue-active);
-}
-
-.social-button:active::after {
-  opacity: 0.3;
+  fill: var(--special-white);
 }
 
 .search-form .button-blue {
@@ -1048,16 +1028,13 @@ img {
   padding: 5px 34px 3px;
   color: var(--basic-white);
   border: 2px solid var(--basic-white);
+  border-radius: 2px;
+}
+
+.button-range:hover {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
 }
 
 /* Animation */
-@keyframes hide {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
 

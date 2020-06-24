@@ -301,6 +301,7 @@ img {
 
 .advantage-headline {
   order: -1;
+  position: relative;
 
   margin: 0px 78px;
 
@@ -342,7 +343,6 @@ img {
   position: absolute;
   top: 100%;
   left: 50%;
-  z-index: 200;
 
   width: 100%;
   padding: 55px;
@@ -361,6 +361,11 @@ img {
 
 .search-form-hide {
   opacity: 0;
+  z-index: -100;
+}
+
+.search-form-error {
+  animation: shake 0.6s;
 }
 
 .search-form-item {
@@ -1038,3 +1043,24 @@ img {
 
 /* Animation */
 
+@keyframes shake {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    opacity: 1;
+  }
+}

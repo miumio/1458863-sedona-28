@@ -342,26 +342,24 @@ img {
 .search-form {
   position: absolute;
   top: 100%;
-  left: 50%;
-
+  left: 0;
+  transform: translateY(0);
   width: 100%;
   padding: 55px;
   margin: 0;
   flex-wrap: wrap;
   justify-content: space-between;
-  transform: translateX(-50%);
 
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px var(--search-grey-shadow);
-
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   box-sizing: border-box; 
-
-  animation: bounce 1s;
 }
 
 .search-form-hide {
+  transform: translateY(-44px);
   opacity: 0;
-  z-index: -100;
+  pointer-events: none;
 }
 
 .search-form-error {
@@ -614,11 +612,6 @@ img {
 
   font-size: 12px;
   color: var(--basic-black);
-}
-
-.filter-result-btn {
-  width: 50px;
-  outline: 1px solid red;
 }
 
 .filter-result-title {
@@ -890,7 +883,7 @@ img {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-height: 120px;
+  min-height: 128px;
   padding: 0 138px 0 125px;
 
   color: var(--basic-black);
@@ -905,7 +898,7 @@ img {
 
 .footer p {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 
   font-size: 21px;
   line-height: 36px;
@@ -929,6 +922,7 @@ img {
 
 .social-item {
   margin: 3px;
+  margin-bottom: 9px;
 }
 
 .copyright {
@@ -938,6 +932,7 @@ img {
 
 .copyright svg {
   margin-left: 8px;
+  margin-bottom: 10px;
 }
 
 .copyright svg:hover {
@@ -966,7 +961,10 @@ img {
   background-color: var(--basic-brown);
 }
 
-.button-brown-form {
+.js-form {
+  position: relative;
+  z-index: 100;
+
   margin-top: 45px;
   margin-bottom: 0px;
   padding: 30px;
@@ -1043,29 +1041,11 @@ img {
 }
 
 /* Animation */
-@keyframes bounce {
-  0% {
-    transform: translateX(-50%) translateY(-50px);
-  }
-
-  70% {
-    transform: translateX(-50%) translateY(30px);
-  }
-
-  90% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-}
 
 @keyframes shake {
   0%,
   100% {
-    transform: translateX(-50%) translateX(0);
+    transform: translateX(0);
   }
 
   10%,
@@ -1073,13 +1053,13 @@ img {
   50%,
   70%,
   90% {
-    transform: translateX(-50%) translateX(-10px);
+    transform: translateX(-10px);
   }
 
   20%,
   40%,
   60%,
   80% {
-    transform: translateX(-50%) translateX(10px);
+    transform: translateX(10px);
   }
 }

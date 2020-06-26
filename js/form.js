@@ -1,4 +1,4 @@
-var formLink = document.querySelector(".button-brown");
+var formLink = document.querySelector(".js-form");
 var form = document.querySelector(".search-form");
 var dataOn = form.querySelector("#data-coming");
 var dataOut = form.querySelector("#data-out");
